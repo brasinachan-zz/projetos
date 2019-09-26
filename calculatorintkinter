@@ -1,0 +1,35 @@
+from tkinter import *
+
+def click_button():
+    print("click_button")
+    if str(ed1.get()).isnumeric() and str(ed2.get()).isnumeric():
+        num1 = int(ed1.get())
+        num2 = int(ed2.get())
+        lb["text"] = num1 + num2
+    else:
+        lb["text"] = "Invalid Values."
+        
+#janela is portuguese for 'window' in english, i prefer that way
+janela = Tk()
+janela.geometry("350x300+200+200")
+
+janela.title("Calculator")
+
+titulo = Label(janela, text="Enter 2 values:")
+titulo.place(x=80, y=50)
+
+ed1 = Entry(janela, width=20)
+ed1.place(x=100, y=100)
+
+ed2 = Entry(janela, width=20)
+ed2.place(x=100, y=130)
+
+bt = Button(janela, width=10, text="SOMA", command=click_button)
+bt.place(x=120, y=150)
+
+lb = Label(janela, text="(Results)")
+lb.place(x=100, y=190)
+
+
+
+janela.mainloop()
