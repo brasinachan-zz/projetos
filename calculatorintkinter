@@ -1,34 +1,69 @@
 from tkinter import *
 
-def click_button():
+def click_button():#quando pressionado botão de soma
     print("click_button")
     if str(ed1.get()).isnumeric() and str(ed2.get()).isnumeric():
         num1 = int(ed1.get())
         num2 = int(ed2.get())
         lb["text"] = num1 + num2
     else:
-        lb["text"] = "Invalid Values."
-        
-#janela is portuguese for 'window' in english, i prefer that way
+        lb["text"] = "Valores \ninseridos \ninválidos."
+
+def click_button2(): #quando pressionado botão de divisão
+    print("click_button2")
+    if str(ed1.get()).isnumeric() and str(ed2.get()).isnumeric():
+        num1 = int(ed1.get())
+        num2 = int(ed2.get())
+        lb["text"] = num1 / num2
+    else:
+        lb["text"] = "Valores \ninseridos \ninválidos."
+
+def click_button3():
+    print("click_button3")
+    if str(ed1.get()).isnumeric() and str(ed2.get()).isnumeric():
+        num1 = int(ed1.get())
+        num2 = int(ed2.get())
+        lb["text"] = num1 * num2
+    else:
+        lb["text"] = "Valores \ninseridos \ninválidos."
+
+def click_button4():
+    print("click_button4")
+    if str(ed1.get()).isnumeric() and str(ed2.get()).isnumeric():
+        num1 = int(ed1.get())
+        num2 = int(ed2.get())
+        lb["text"] = num1 - num2
+    else:
+        lb["text"] = "Valores \ninseridos \ninválidos."
+
 janela = Tk()
-janela.geometry("350x300+200+200")
+janela.geometry("300x300+90+90")
 
-janela.title("Calculator")
+janela.title("Calculadora Operações Básicas")
 
-titulo = Label(janela, text="Enter 2 values:")
-titulo.place(x=80, y=50)
+titulo = Label(janela, text="Digite 2 valores para obter o cálculo:")
+titulo.place(x=50, y=50)
 
 ed1 = Entry(janela, width=20)
-ed1.place(x=100, y=100)
+ed1.place(x=60, y=100)
 
 ed2 = Entry(janela, width=20)
-ed2.place(x=100, y=130)
+ed2.place(x=60, y=130)
 
-bt = Button(janela, width=10, text="SOMA", command=click_button)
-bt.place(x=120, y=150)
+bt1 = Button(janela, width=5, text="+", command=click_button)
+bt1.place(x=60, y=150)
 
-lb = Label(janela, text="(Results)")
-lb.place(x=100, y=190)
+bt2 = Button(janela, width=5, text="/", command=click_button2)
+bt2.place(x=60, y=180)
+
+bt3 = Button(janela, width=5, text="x", command=click_button3)
+bt3.place(x=110, y=150)
+
+bt4 = Button(janela, width=5, text="-", command=click_button4)
+bt4.place(x=110, y=180)
+
+lb = Label(janela, text="(Resultado)")
+lb.place(x=200, y=100)
 
 
 
